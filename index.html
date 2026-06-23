@@ -102,6 +102,7 @@
   .score-good { background: #d1fae5; color: #065f46; }
   .score-mid  { background: #fef3c7; color: #92400e; }
   .score-bad  { background: #fee2e2; color: #991b1b; }
+  .qnum { color: #0f4c81; margin-right: 6px; }
 </style>
 </head>
 <body>
@@ -127,187 +128,322 @@ const questions = [
   { q: "Qual é o principal efeito do surfactante pulmonar?",
     opts: ["Aumentar a tensão superficial alveolar","Diminuir a complacência pulmonar","Reduzir a tensão superficial e prevenir atelectasia","Aumentar a resistência das vias aéreas"],
     correct: 2,
-    exp: "O surfactante (produzido pelos pneumócitos tipo II) reduz a tensão superficial alveolar, aumenta a complacência e previne o colapso (atelectasia) dos alvéolos menores." },
-
+    exp: "O surfactante (pneumócitos tipo II) reduz a tensão superficial, aumenta a complacência e previne o colapso alveolar." },
   { q: "Na inspiração tranquila, o que acontece à pressão intrapleural?",
     opts: ["Torna-se menos negativa","Torna-se mais negativa","Fica igual à pressão atmosférica","Torna-se positiva"],
     correct: 1,
-    exp: "Na inspiração, a expansão da caixa torácica torna a pressão intrapleural mais negativa (de ~−5 para ~−8 cmH₂O)." },
-
+    exp: "A expansão da caixa torácica torna a pressão intrapleural mais negativa (de ~−5 para ~−8 cmH₂O)." },
   { q: "No enfisema, espera-se encontrar:",
     opts: ["Diminuição da complacência pulmonar","Aumento do recuo elástico pulmonar","Diminuição do volume residual","Aumento da complacência pulmonar"],
     correct: 3,
-    exp: "A destruição das fibras elásticas no enfisema reduz o recuo elástico e aumenta a complacência pulmonar." },
-
+    exp: "Destruição das fibras elásticas reduz o recuo e aumenta a complacência." },
   { q: "Na fibrose pulmonar, qual é o padrão mais provável?",
     opts: ["Diminuição da complacência e redução da capacidade pulmonar total","Aumento da complacência e aumento do volume residual","Obstrução pura das vias aéreas","Aumento marcado do volume residual sem alteração da capacidade vital"],
     correct: 0,
-    exp: "Padrão restritivo clássico: pulmões rígidos, complacência diminuída e todos os volumes pulmonares (incluindo CPT) reduzidos." },
-
+    exp: "Padrão restritivo: pulmões rígidos, complacência e CPT diminuídas." },
   { q: "A maior parte da resistência das vias aéreas em condições normais localiza-se sobretudo:",
     opts: ["Nos alvéolos","Nos bronquíolos terminais isoladamente","Nas vias aéreas de médio calibre","Na membrana alvéolo-capilar"],
     correct: 2,
-    exp: "Apesar de cada pequena via aérea ter alta resistência, o seu enorme número em paralelo torna a resistência total baixa; assim, a maior parte da resistência reside nas vias aéreas de médio calibre (brônquios)." },
-
+    exp: "As pequenas vias em paralelo têm baixa resistência total; a maior resistência está nos brônquios de médio calibre." },
   { q: "Durante uma expiração forçada, a compressão dinâmica das vias aéreas ocorre porque:",
     opts: ["A pressão intrapleural se torna positiva","A pressão alveolar fica sempre negativa","O diafragma relaxa completamente","O surfactante desaparece"],
     correct: 0,
-    exp: "Na expiração forçada, a pressão intrapleural torna-se positiva e pode exceder a pressão dentro das vias aéreas a jusante, colapsando-as (ponto de igual pressão)." },
-
+    exp: "A pressão intrapleural positiva pode exceder a pressão dentro da via aérea, colapsando-a (ponto de igual pressão)." },
   { q: "A hipoventilação alveolar causa tipicamente:",
     opts: ["Diminuição da pressão arterial de dióxido de carbono","Aumento da pressão arterial de dióxido de carbono","Aumento acentuado do pH","Diminuição da concentração de bicarbonato por mecanismo imediato"],
     correct: 1,
-    exp: "Menor ventilação ⇒ retenção de CO₂ ⇒ hipercapnia e acidose respiratória." },
-
+    exp: "Hipoventilação ⇒ retenção de CO₂ ⇒ acidose respiratória." },
   { q: "Um êmbolo pulmonar agudo tende a produzir uma região pulmonar com:",
     opts: ["Baixa ventilação e perfusão normal","Ventilação normal e perfusão reduzida","Ausência de ventilação e perfusão aumentada","Shunt verdadeiro"],
     correct: 1,
-    exp: "O êmbolo bloqueia a perfusão, mas a ventilação permanece — cria-se espaço morto (V/Q elevado)." },
-
+    exp: "Cria espaço morto (V/Q elevado): ventilação preservada, perfusão bloqueada." },
   { q: "Numa área pulmonar com shunt, a administração de oxigénio a 100% corrige a hipoxemia:",
     opts: ["Sempre completamente","Melhor do que numa alteração de difusão","Pobremente, porque o sangue não contacta alvéolos ventilados","Apenas se houver hipercapnia associada"],
     correct: 2,
-    exp: "No shunt verdadeiro, o sangue desviado nunca contacta gás alveolar, pelo que O₂ a 100% não corrige a hipoxemia." },
-
+    exp: "O sangue desviado nunca contacta gás alveolar — O₂ a 100% não corrige." },
   { q: "O efeito Bohr corresponde a:",
     opts: ["Aumento da afinidade da hemoglobina pelo oxigénio quando aumenta o dióxido de carbono","Deslocamento da curva de dissociação da oxi-hemoglobina para a direita por aumento de dióxido de carbono ou hidrogénio","Diminuição da libertação periférica de oxigénio","Ligação irreversível do oxigénio à hemoglobina"],
     correct: 1,
-    exp: "Aumento de CO₂/H⁺ (e temperatura, 2,3-DPG) desloca a curva para a direita, facilitando a libertação de O₂ aos tecidos." },
-
+    exp: "↑ CO₂/H⁺/temp/2,3-DPG desloca a curva para a direita, facilitando a libertação de O₂." },
   { q: "O efeito Haldane descreve:",
     opts: ["A maior capacidade do sangue desoxigenado transportar dióxido de carbono","A menor capacidade do sangue desoxigenado transportar dióxido de carbono","A inibição da ventilação pelo oxigénio","A conversão renal de dióxido de carbono em bicarbonato"],
     correct: 0,
-    exp: "A desoxihemoglobina liga CO₂ e H⁺ mais facilmente, aumentando o transporte de CO₂ no sangue venoso." },
-
+    exp: "Desoxihemoglobina liga melhor CO₂ e H⁺." },
   { q: "A maior parte do dióxido de carbono no sangue é transportada:",
     opts: ["Dissolvida no plasma","Ligada ao ferro da hemoglobina","Sob a forma de bicarbonato","Como monóxido de carbono"],
     correct: 2,
-    exp: "Cerca de 70% do CO₂ é transportado como HCO₃⁻ no plasma; ~23% como carbamino-Hb; ~7% dissolvido." },
-
+    exp: "~70% como HCO₃⁻; ~23% carbamino-Hb; ~7% dissolvido." },
   { q: "Os quimiorrecetores centrais respondem principalmente a:",
     opts: ["Oxigénio arterial baixo diretamente","Hidrogénio no líquido cefalorraquidiano gerado a partir de dióxido de carbono","Bicarbonato plasmático diretamente","Pressão arterial sistémica"],
     correct: 1,
-    exp: "O CO₂ atravessa a BHE e, no LCR, forma H⁺ que estimula os quimiorrecetores centrais bulbares." },
-
+    exp: "CO₂ difunde para o LCR e forma H⁺, que estimula os quimiorrecetores bulbares." },
   { q: "Em altitude elevada, a resposta ventilatória inicial mais importante é:",
     opts: ["Hipoventilação por alcalose metabólica","Hiperventilação estimulada por hipoxemia","Apneia por inibição dos quimiorrecetores periféricos","Diminuição da ventilação alveolar para conservar dióxido de carbono"],
     correct: 1,
-    exp: "A baixa PO₂ estimula os quimiorrecetores periféricos (corpos carotídeos), provocando hiperventilação e alcalose respiratória." },
-
+    exp: "Baixa PO₂ estimula corpos carotídeos ⇒ hiperventilação e alcalose respiratória." },
   { q: "Numa doença obstrutiva, como a asma, espera-se encontrar:",
     opts: ["Aumento da razão FEV1/FVC","Diminuição da razão FEV1/FVC","Capacidade pulmonar total sempre diminuída","Volume residual sempre nulo"],
     correct: 1,
-    exp: "A obstrução reduz desproporcionalmente o FEV1, levando a uma razão FEV1/FVC diminuída (<0,7)." },
-
+    exp: "Obstrução ⇒ FEV1 desproporcionalmente reduzido ⇒ FEV1/FVC < 0,7." },
   { q: "Numa doença restritiva, espera-se encontrar:",
     opts: ["Capacidade pulmonar total diminuída","FEV1/FVC marcadamente diminuída como achado principal","Volume residual muito aumentado","Complacência pulmonar sempre aumentada"],
     correct: 0,
-    exp: "Restrição = redução de todos os volumes, sobretudo a CPT. A razão FEV1/FVC mantém-se normal ou aumentada." },
-
+    exp: "Restrição = todos os volumes reduzidos, sobretudo CPT; FEV1/FVC mantém-se ou aumenta." },
   { q: "Durante exercício moderado num indivíduo saudável, a ventilação aumenta principalmente para:",
     opts: ["Manter as pressões arteriais de oxigénio e dióxido de carbono relativamente estáveis","Produzir hipercapnia marcada","Produzir hipoxemia progressiva","Reduzir a entrega de oxigénio aos tecidos"],
     correct: 0,
-    exp: "A ventilação acompanha a produção de CO₂ e o consumo de O₂, mantendo PaO₂ e PaCO₂ praticamente constantes." },
-
+    exp: "A ventilação acompanha o metabolismo, mantendo PaO₂ e PaCO₂ praticamente constantes." },
   { q: "A filtração glomerular ocorre sobretudo porque:",
     opts: ["A pressão oncótica no espaço de Bowman é elevada","A pressão hidrostática nos capilares glomerulares favorece a filtração","A cápsula de Bowman secreta ativamente sódio","O túbulo proximal aspira plasma por transporte ativo"],
     correct: 1,
-    exp: "A pressão hidrostática glomerular (~60 mmHg) é a força impulsionadora da ultrafiltração (forças de Starling)." },
-
+    exp: "A pressão hidrostática glomerular (~60 mmHg) é a força que impulsiona a filtração." },
   { q: "A dilatação da arteríola aferente tende a:",
     opts: ["Diminuir o fluxo plasmático renal e a taxa de filtração glomerular","Aumentar o fluxo plasmático renal e a taxa de filtração glomerular","Diminuir sempre a fração de filtração para zero","Impedir a filtração glomerular"],
     correct: 1,
-    exp: "Vasodilatação aferente ⇒ ↑ fluxo ao glomérulo ⇒ ↑ pressão hidrostática glomerular ⇒ ↑ TFG e ↑ FPR." },
-
+    exp: "Vasodilatação aferente ⇒ ↑ FPR e ↑ TFG." },
   { q: "Uma constrição moderada da arteríola eferente tende inicialmente a:",
     opts: ["Diminuir a pressão hidrostática glomerular","Aumentar a taxa de filtração glomerular","Eliminar a fração de filtração","Impedir a reabsorção proximal"],
     correct: 1,
-    exp: "Constrição eferente aumenta a pressão hidrostática glomerular e a TFG, enquanto reduz o FPR — fração de filtração aumenta." },
-
+    exp: "↑ pressão hidrostática glomerular ⇒ ↑ TFG e ↑ fração de filtração." },
   { q: "Os principais mecanismos de autorregulação renal incluem:",
     opts: ["Reflexo barorrecetor carotídeo e secreção de insulina","Resposta miogénica e feedback túbulo-glomerular","Libertação de tiroxina e prolactina","Contração voluntária do músculo liso renal"],
     correct: 1,
-    exp: "Autorregulação renal: resposta miogénica da arteríola aferente + feedback túbulo-glomerular (mácula densa)." },
-
+    exp: "Miogénico + feedback túbulo-glomerular (mácula densa)." },
   { q: "O túbulo proximal reabsorve aproximadamente:",
     opts: ["Quase nenhum sódio e água","A maioria do sódio e água filtrados, de forma quase iso-osmótica","Apenas água, sem solutos","Apenas ureia"],
     correct: 1,
-    exp: "O TCP reabsorve ~67% do Na⁺ e da água filtrados, isosmoticamente." },
-
+    exp: "TCP reabsorve ~67% do Na⁺ e da água filtrados, isosmoticamente." },
   { q: "A glucose filtrada é reabsorvida principalmente:",
     opts: ["No ducto coletor por aquaporinas","No túbulo proximal por cotransporte com sódio","Na ansa descendente de Henle por difusão simples","No glomérulo por pinocitose"],
     correct: 1,
-    exp: "Reabsorção via SGLT (cotransporte Na⁺/glucose) na membrana apical do túbulo proximal." },
-
+    exp: "Via SGLT no túbulo proximal." },
   { q: "Quando a carga filtrada de glucose excede a capacidade máxima de transporte tubular:",
     opts: ["Surge glucose na urina","A filtração glomerular cessa","A insulina deixa de atuar no músculo","O rim passa a secretar glucose para o sangue"],
     correct: 0,
-    exp: "Acima do Tm (limiar ~200 mg/dL), os transportadores SGLT saturam e surge glicosúria." },
-
+    exp: "Saturação dos SGLT ⇒ glicosúria." },
   { q: "A ansa descendente fina de Henle é caracteristicamente:",
     opts: ["Muito permeável à água","Impermeável à água e muito ativa no transporte de sódio","O principal local de ação da aldosterona","O local de secreção de renina"],
     correct: 0,
-    exp: "A descendente fina é altamente permeável à água e pouco a solutos — concentra o líquido tubular." },
-
+    exp: "Permeável à água, pouco a solutos — concentra o líquido tubular." },
   { q: "O ramo ascendente espesso da ansa de Henle:",
     opts: ["Reabsorve sódio, potássio e cloreto e é relativamente impermeável à água","Reabsorve apenas água","Secreta glucose","É o principal local de filtração"],
     correct: 0,
-    exp: "Cotransportador NKCC2 reabsorve Na⁺/K⁺/2Cl⁻; a impermeabilidade à água cria o segmento diluidor." },
-
+    exp: "Cotransportador NKCC2; impermeável à água — segmento diluidor." },
   { q: "A hormona antidiurética aumenta a reabsorção de água principalmente por:",
     opts: ["Inibir todos os canais de água","Inserir aquaporinas do tipo 2 nas células principais do ducto coletor","Bloquear a medula renal","Aumentar diretamente a filtração glomerular"],
     correct: 1,
-    exp: "ADH liga V2 → AMPc → inserção de AQP2 na membrana apical das células principais." },
-
+    exp: "ADH → V2 → AMPc → inserção de AQP2." },
   { q: "A aldosterona atua sobretudo para:",
     opts: ["Aumentar a excreção de sódio e diminuir a excreção de potássio","Aumentar a reabsorção de sódio e a secreção de potássio","Diminuir a reabsorção de sódio no túbulo proximal","Inibir a bomba sódio-potássio ATPase"],
     correct: 1,
-    exp: "Atua nas células principais do ducto coletor: ↑ reabsorção de Na⁺ (e água) e ↑ secreção de K⁺ e H⁺." },
-
+    exp: "Células principais: ↑ Na⁺ reabsorvido, ↑ K⁺ e H⁺ secretados." },
   { q: "A paratormona no rim:",
     opts: ["Aumenta a reabsorção de fosfato no túbulo proximal","Diminui a reabsorção de cálcio no túbulo distal","Aumenta a reabsorção de cálcio e diminui a reabsorção de fosfato","Não tem efeitos renais relevantes"],
     correct: 2,
-    exp: "PTH ↑ reabsorção de Ca²⁺ no túbulo distal e ↓ reabsorção de fosfato no TCP (fosfatúria)." },
-
+    exp: "PTH ↑ Ca²⁺ distal e ↓ fosfato proximal (fosfatúria)." },
   { q: "A depuração da inulina é usada para estimar:",
     opts: ["Fluxo plasmático renal efetivo","Taxa de filtração glomerular","Secreção tubular máxima de potássio","Produção hepática de ureia"],
     correct: 1,
-    exp: "A inulina é livremente filtrada e não reabsorvida nem secretada → marcador ideal da TFG." },
-
+    exp: "Inulina é livremente filtrada, não reabsorvida nem secretada — marcador da TFG." },
   { q: "Se a concentração urinária de uma substância for 100 mg/mL, o fluxo urinário 1 mL/min e a concentração plasmática 2 mg/mL, qual é a sua depuração?",
     opts: ["25 mL/min","50 mL/min","100 mL/min","200 mL/min"],
     correct: 1,
     exp: "C = (U × V) / P = (100 × 1) / 2 = 50 mL/min." },
-
   { q: "A reabsorção de bicarbonato no túbulo proximal depende fortemente de:",
     opts: ["Anidrase carbónica","Hemoglobina fetal","Tiroglobulina","Renina plasmática"],
     correct: 0,
-    exp: "A anidrase carbónica (apical e citoplasmática) é essencial para converter HCO₃⁻ ⇌ CO₂ + H₂O e permitir a sua reabsorção indireta." },
-
+    exp: "Anidrase carbónica é essencial para a reabsorção de HCO₃⁻." },
   { q: "Numa acidose metabólica, a compensação respiratória esperada é:",
     opts: ["Hipoventilação","Hiperventilação","Apneia prolongada","Ausência de resposta ventilatória"],
     correct: 1,
-    exp: "Hiperventilação (respiração de Kussmaul) reduz a PaCO₂, atenuando a acidose." },
-
+    exp: "Hiperventilação (Kussmaul) reduz PaCO₂." },
   { q: "Na acidose metabólica crónica, o rim contribui para a compensação através de:",
     opts: ["Menor secreção de hidrogénio","Menor produção de amónio","Maior excreção de ácido e regeneração de bicarbonato","Eliminação completa da filtração glomerular"],
     correct: 2,
-    exp: "O rim aumenta a excreção de H⁺ (amónio e acidez titulável) e regenera HCO₃⁻ novo." },
-
+    exp: "↑ excreção de H⁺ (amónio e acidez titulável); regeneração de HCO₃⁻." },
   { q: "A ativação do sistema renina-angiotensina-aldosterona é favorecida por:",
     opts: ["Aumento da pressão de perfusão renal","Diminuição da atividade simpática renal","Diminuição de sódio-cloreto na mácula densa","Excesso de péptido natriurético auricular"],
     correct: 2,
-    exp: "Baixa pressão renal, ↑ simpático e ↓ NaCl na mácula densa estimulam a libertação de renina." },
-
+    exp: "↓ NaCl na mácula densa, ↓ pressão renal e ↑ simpático estimulam renina." },
   { q: "Os péptidos natriuréticos tendem a:",
     opts: ["Promover retenção de sódio","Inibir natriurese","Favorecer excreção de sódio e água","Estimular intensamente a aldosterona"],
     correct: 2,
-    exp: "ANP/BNP promovem natriurese, diurese e vasodilatação; inibem renina e aldosterona." },
-
+    exp: "ANP/BNP promovem natriurese e diurese; inibem renina e aldosterona." },
   { q: "Na ausência de ADH, a urina tende a ser:",
     opts: ["Concentrada e de baixo volume","Diluída e de elevado volume","Isosmótica e sem alteração de volume","Rica em proteínas plasmáticas"],
     correct: 1,
-    exp: "Sem ADH, o ducto coletor é impermeável à água → urina diluída e abundante (diabetes insípida)." },
-
+    exp: "Sem ADH, ducto coletor impermeável à água — diabetes insípida." },
   { q: "As hormonas peptídicas atuam geralmente através de:",
-    opts: ["Recetores intracelulares nucleares","Recetores de membrana e segundos mensageiros","Ligação direta ao DNA sem
+    opts: ["Recetores intracelulares nucleares","Recetores de membrana e segundos mensageiros","Ligação direta ao DNA sem recetor","Conversão obrigatória em esteroides"],
+    correct: 1,
+    exp: "Hidrofílicas — recetores de membrana com cascatas de segundos mensageiros." },
+  { q: "As hormonas esteroides são sintetizadas a partir de:",
+    opts: ["Colesterol","Glicogénio","Hemoglobina","Creatinina"],
+    correct: 0,
+    exp: "Todos os esteroides derivam do colesterol." },
+  { q: "O mecanismo de feedback negativo nos eixos endócrinos significa que:",
+    opts: ["A hormona periférica estimula sempre mais libertação hipotalâmica","A hormona periférica inibe a secreção hipofisária e/ou hipotalâmica","A hipófise deixa de responder ao hipotálamo","O eixo funciona apenas por reflexos neurais"],
+    correct: 1,
+    exp: "A hormona-alvo inibe os centros superiores, estabilizando os níveis." },
+  { q: "No eixo tiroideu, a sequência correta é:",
+    opts: ["TSH estimula TRH, que estimula tiroxina","TRH estimula TSH, que estimula produção de T3 e T4","T3 estimula TRH e TSH","Calcitonina estimula TSH"],
+    correct: 1,
+    exp: "Hipotálamo (TRH) → hipófise (TSH) → tiroide (T3/T4)." },
+  { q: "Na doença de Graves típica, espera-se encontrar:",
+    opts: ["TSH elevada e T4 baixa","TSH baixa e T4/T3 elevadas","TSH elevada e T4 elevada por falência tiroideia primária","TSH normal e ausência de sintomas"],
+    correct: 1,
+    exp: "Hipertiroidismo autoimune: TSI ↑ T4/T3, TSH suprimida por feedback." },
+  { q: "No hipotiroidismo primário, o padrão laboratorial típico é:",
+    opts: ["TSH baixa e T4 baixa","TSH elevada e T4 baixa","TSH baixa e T4 elevada","TSH elevada e T4 elevada"],
+    correct: 1,
+    exp: "Falência tiroideia ⇒ ↓ T4 e ↑ TSH compensatória." },
+  { q: "O cortisol é produzido principalmente na:",
+    opts: ["Zona glomerulosa do córtex suprarrenal","Zona fasciculada do córtex suprarrenal","Medula suprarrenal","Neuro-hipófise"],
+    correct: 1,
+    exp: "Glomerulosa → aldosterona; fasciculada → cortisol; reticular → androgénios." },
+  { q: "A secreção de aldosterona é estimulada principalmente por:",
+    opts: ["Angiotensina II e aumento do potássio plasmático","Diminuição do potássio plasmático e prolactina","TSH e tiroxina","Oxitocina e dopamina"],
+    correct: 0,
+    exp: "Os dois principais estímulos são a angiotensina II e a hipercaliemia." },
+  { q: "A medula suprarrenal liberta sobretudo:",
+    opts: ["Hormonas tiroideias","Catecolaminas","Paratormona","Insulina"],
+    correct: 1,
+    exp: "Células cromafins libertam adrenalina (~80%) e noradrenalina." },
+  { q: "A insulina é secretada pelas células:",
+    opts: ["Alfa pancreáticas","Beta pancreáticas","Delta pancreáticas","C da tiroide"],
+    correct: 1,
+    exp: "Células β das ilhotas de Langerhans." },
+  { q: "A principal ação metabólica da insulina é:",
+    opts: ["Aumentar a produção hepática de glucose em jejum","Promover captação e armazenamento de nutrientes no estado pós-prandial","Estimular lipólise intensa no tecido adiposo","Aumentar cetogénese hepática"],
+    correct: 1,
+    exp: "Hormona anabólica: promove glicogénese, lipogénese e síntese proteica." },
+  { q: "O glucagon é secretado principalmente em resposta a:",
+    opts: ["Hiperglicemia pós-prandial","Hipoglicemia e jejum","Aumento da insulina","Excesso de cálcio plasmático"],
+    correct: 1,
+    exp: "Células α respondem à hipoglicemia ⇒ glicogenólise e gliconeogénese hepáticas." },
+  { q: "A paratormona aumenta a concentração plasmática de cálcio através de:",
+    opts: ["Inibição da reabsorção renal de cálcio","Aumento da excreção renal de cálcio","Ações no osso, rim e ativação da vitamina D","Bloqueio da absorção intestinal de cálcio"],
+    correct: 2,
+    exp: "PTH age no osso (reabsorção), rim (↑ Ca²⁺, ↓ fosfato) e estimula 1α-hidroxilase ⇒ vit. D ativa." },
+  { q: "A vitamina D ativa aumenta principalmente:",
+    opts: ["Absorção intestinal de cálcio e fosfato","Excreção fecal de cálcio","Secreção de TSH","Produção de ADH"],
+    correct: 0,
+    exp: "1,25-(OH)₂-D₃ atua no intestino aumentando a absorção de Ca²⁺ e fosfato." },
+  { q: "A ADH é sintetizada principalmente no hipotálamo e armazenada/libertada pela:",
+    opts: ["Adeno-hipófise","Neuro-hipófise","Tiroide","Paratiroide"],
+    correct: 1,
+    exp: "Sintetizada nos núcleos supraótico e paraventricular; libertada pela neuro-hipófise." },
+  { q: "A hormona do crescimento exerce muitos dos seus efeitos de crescimento através de:",
+    opts: ["IGF-1 produzido sobretudo no fígado","Aldosterona","Calcitonina","Prolactina"],
+    correct: 0,
+    exp: "GH estimula o fígado a produzir IGF-1, mediador do crescimento somático." },
+  { q: "A prolactina é regulada de forma tónica sobretudo por:",
+    opts: ["Estimulação contínua por dopamina","Inibição contínua por dopamina","Estimulação por aldosterona","Inibição por paratormona"],
+    correct: 1,
+    exp: "Única hormona hipofisária sob controlo predominantemente inibitório (dopamina = PIF)." },
+  { q: "A secreção pulsátil de GnRH é importante porque:",
+    opts: ["Estimula a libertação de LH e FSH","Inibe completamente a função gonadal","Estimula apenas a prolactina","Bloqueia a hipófise posterior"],
+    correct: 0,
+    exp: "O padrão pulsátil é essencial; estimulação contínua dessensibiliza a hipófise." },
+  { q: "No ciclo menstrual, o pico de LH é desencadeado principalmente por:",
+    opts: ["Feedback positivo do estradiol sustentado","Feedback negativo permanente da progesterona","Aumento abrupto de cortisol","Supressão total de GnRH"],
+    correct: 0,
+    exp: "Estradiol elevado e mantido (>200 pg/mL por ~48h) inverte o feedback para positivo ⇒ pico de LH ⇒ ovulação." },
+  { q: "A oxitocina está especialmente envolvida em:",
+    opts: ["Contração uterina e ejeção do leite","Produção de leite por células mamárias","Aumento da glicemia em jejum","Produção de hormonas tiroideias"],
+    correct: 0,
+    exp: "Ejeção do leite (células mioepiteliais) e contração uterina no parto. A produção de leite é da prolactina." }
+];
+
+// --- Funções do quiz ---
+let shuffledQuestions = [];
+
+function shuffle(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function renderQuiz() {
+  shuffledQuestions = shuffle(questions);
+  const container = document.getElementById('quiz');
+  container.innerHTML = '';
+
+  shuffledQuestions.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.id = `q${idx}`;
+
+    let html = `<h3><span class="qnum">${idx + 1}.</span>${item.q}</h3><div class="options">`;
+    item.opts.forEach((opt, i) => {
+      html += `
+        <label id="q${idx}_opt${i}">
+          <input type="radio" name="q${idx}" value="${i}">
+          ${String.fromCharCode(65 + i)}. ${opt}
+        </label>`;
+    });
+    html += `</div><div class="explanation" id="exp${idx}"></div>`;
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+
+  document.getElementById('result').className = '';
+  document.getElementById('result').textContent = '';
+}
+
+function submitQuiz() {
+  let score = 0;
+  const total = shuffledQuestions.length;
+
+  shuffledQuestions.forEach((item, idx) => {
+    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+    const userIdx = selected ? parseInt(selected.value) : -1;
+
+    // Limpar estilos anteriores
+    item.opts.forEach((_, i) => {
+      const lbl = document.getElementById(`q${idx}_opt${i}`);
+      lbl.classList.remove('correct', 'incorrect');
+    });
+
+    // Marcar correta
+    document.getElementById(`q${idx}_opt${item.correct}`).classList.add('correct');
+
+    // Marcar errada se foi escolhida
+    if (userIdx !== -1 && userIdx !== item.correct) {
+      document.getElementById(`q${idx}_opt${userIdx}`).classList.add('incorrect');
+    }
+
+    if (userIdx === item.correct) score++;
+
+    // Mostrar explicação
+    const exp = document.getElementById(`exp${idx}`);
+    exp.innerHTML = `<strong>Resposta correta: ${String.fromCharCode(65 + item.correct)}.</strong> ${item.exp}`;
+    exp.classList.add('show');
+  });
+
+  const result = document.getElementById('result');
+  const pct = Math.round((score / total) * 100);
+  result.textContent = `Resultado: ${score} / ${total} (${pct}%)`;
+  result.classList.add('show');
+  result.classList.remove('score-good', 'score-mid', 'score-bad');
+  if (pct >= 75)      result.classList.add('score-good');
+  else if (pct >= 50) result.classList.add('score-mid');
+  else                result.classList.add('score-bad');
+
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+function resetQuiz() {
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Inicializar
+renderQuiz();
+</script>
+
+</body>
+</html>
