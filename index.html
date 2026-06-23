@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Fisiologia II</title>
+
   <style>
     :root {
-      --bg: #f5f7fb;
+      --bg: #f4f7fb;
       --card: #ffffff;
-      --text: #18202f;
+      --text: #172033;
       --muted: #667085;
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -44,7 +45,7 @@
 
     header p {
       margin: 0 auto;
-      max-width: 780px;
+      max-width: 800px;
       opacity: 0.95;
     }
 
@@ -180,6 +181,11 @@
       background: var(--primary-dark);
     }
 
+    .primary-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
     .secondary-btn {
       background: #e5e7eb;
       color: #111827;
@@ -210,6 +216,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Quiz de Fisiologia II</h1>
@@ -241,7 +248,7 @@
   </main>
 
   <footer>
-    Baseado em conteúdos clássicos de Fisiologia Humana, com orientação temática compatível com Fisiologia II da NOVA Medical School e manual de Costanzo.
+    Baseado em conteúdos clássicos de Fisiologia Humana, com orientação temática compatível com Fisiologia II: respiratória, transporte de gases, exercício, renal, água, ácido-base e endócrina.
   </footer>
 
   <script>
@@ -250,326 +257,326 @@
         topic: "Respiratória",
         question: "Qual é a principal função da ventilação alveolar?",
         options: [
-          "Manter constante o volume residual",
-          "Renovar o gás alveolar para permitir trocas gasosas eficazes",
-          "Aumentar a pressão intrapleural acima da atmosférica",
-          "Impedir a difusão de dióxido de carbono"
+          "Renovar o gás alveolar para permitir trocas gasosas",
+          "Aumentar o volume residual",
+          "Impedir a difusão de dióxido de carbono",
+          "Produzir surfactante"
         ],
-        answer: 1,
-        explanation: "A ventilação alveolar renova o ar nos alvéolos, permitindo entrada de oxigénio e eliminação de dióxido de carbono."
+        answer: 0,
+        explanation: "A ventilação alveolar renova o ar que participa efetivamente nas trocas gasosas."
       },
       {
         topic: "Respiratória",
-        question: "Durante a inspiração tranquila, o principal músculo responsável é:",
+        question: "Durante a inspiração tranquila, o principal músculo ativo é:",
         options: [
           "Diafragma",
-          "Músculo reto abdominal",
-          "Esternocleidomastoideu",
-          "Intercostais internos"
+          "Reto abdominal",
+          "Intercostais internos",
+          "Músculos expiratórios abdominais"
         ],
         answer: 0,
-        explanation: "Na inspiração tranquila, a contração do diafragma aumenta o volume torácico e reduz a pressão alveolar."
+        explanation: "O diafragma contrai-se, aumenta o volume torácico e reduz a pressão alveolar."
       },
       {
         topic: "Respiratória",
         question: "A pressão intrapleural é normalmente negativa porque:",
         options: [
-          "O pulmão tende a retrair para dentro e a parede torácica tende a expandir para fora",
+          "O pulmão tende a retrair e a parede torácica tende a expandir",
           "A pressão atmosférica é sempre negativa",
-          "O diafragma está sempre contraído ao máximo",
-          "Os alvéolos secretam surfactante em excesso"
+          "Os alvéolos estão sempre colapsados",
+          "O surfactante aumenta a tensão superficial"
         ],
         answer: 0,
         explanation: "As forças elásticas opostas do pulmão e da parede torácica criam pressão negativa no espaço pleural."
       },
       {
         topic: "Respiratória",
-        question: "O surfactante pulmonar tem como principal efeito:",
+        question: "O surfactante pulmonar tem como principal função:",
         options: [
-          "Aumentar a tensão superficial alveolar",
-          "Reduzir a tensão superficial e prevenir colapso alveolar",
+          "Reduzir a tensão superficial alveolar",
+          "Aumentar a resistência das vias aéreas",
           "Bloquear a difusão de oxigénio",
-          "Aumentar a resistência das vias aéreas"
+          "Aumentar a pressão oncótica"
         ],
-        answer: 1,
-        explanation: "O surfactante reduz a tensão superficial, aumentando a estabilidade alveolar, sobretudo nos alvéolos pequenos."
+        answer: 0,
+        explanation: "O surfactante reduz a tensão superficial, estabilizando os alvéolos, especialmente os mais pequenos."
       },
       {
         topic: "Respiratória",
-        question: "A complacência pulmonar corresponde à:",
+        question: "A complacência pulmonar corresponde a:",
         options: [
-          "Resistência ao fluxo aéreo",
           "Variação de volume por variação de pressão",
-          "Quantidade de ar no espaço morto anatómico",
-          "Capacidade de ligação da hemoglobina ao oxigénio"
+          "Resistência ao fluxo aéreo",
+          "Capacidade de transporte de oxigénio pela hemoglobina",
+          "Quantidade de ar no espaço morto"
         ],
-        answer: 1,
+        answer: 0,
         explanation: "Complacência é a facilidade com que o pulmão se distende perante uma alteração de pressão."
       },
       {
         topic: "Respiratória",
-        question: "Numa doença restritiva pulmonar, espera-se geralmente:",
+        question: "Numa doença pulmonar restritiva, espera-se geralmente:",
         options: [
-          "Aumento marcado da complacência",
           "Redução da capacidade pulmonar total",
-          "Aumento do volume residual sempre com obstrução",
+          "Aumento obrigatório da complacência",
+          "Aumento isolado da capacidade vital",
           "Ausência de alteração dos volumes pulmonares"
         ],
-        answer: 1,
-        explanation: "Doenças restritivas limitam a expansão pulmonar, reduzindo volumes como a capacidade pulmonar total."
+        answer: 0,
+        explanation: "As doenças restritivas limitam a expansão pulmonar e reduzem volumes pulmonares."
       },
       {
         topic: "Respiratória",
-        question: "Numa obstrução das vias aéreas, como na asma, é típico encontrar:",
+        question: "Numa doença obstrutiva, como a asma, é típico haver:",
         options: [
+          "Aumento da resistência das vias aéreas",
           "Redução da resistência das vias aéreas",
-          "Dificuldade predominante na expiração",
-          "Desaparecimento do volume residual",
-          "Ausência de trabalho respiratório adicional"
+          "Eliminação do espaço morto",
+          "Impossibilidade de expirar qualquer volume"
         ],
-        answer: 1,
+        answer: 0,
         explanation: "A obstrução aumenta a resistência ao fluxo, afetando especialmente a expiração."
       },
       {
         topic: "Respiratória",
         question: "O espaço morto anatómico inclui:",
         options: [
-          "Alvéolos bem perfundidos",
-          "Vias de condução onde não ocorre troca gasosa significativa",
+          "Vias condutoras sem trocas gasosas significativas",
           "Apenas os capilares pulmonares",
-          "Apenas os bronquíolos respiratórios"
+          "Apenas os alvéolos perfundidos",
+          "A membrana alveolocapilar"
         ],
-        answer: 1,
-        explanation: "O espaço morto anatómico corresponde às vias condutoras, como traqueia e brônquios, onde não há trocas gasosas relevantes."
+        answer: 0,
+        explanation: "Traqueia, brônquios e parte das vias condutoras ventilam, mas não fazem trocas gasosas relevantes."
       },
       {
         topic: "Respiratória",
-        question: "Uma relação ventilação-perfusão muito baixa significa que:",
+        question: "Uma relação ventilação-perfusão baixa significa:",
         options: [
-          "Há muita ventilação para pouca perfusão",
-          "Há pouca ventilação relativamente à perfusão",
-          "Não há perfusão nem ventilação",
-          "A difusão de gases está sempre aumentada"
+          "Pouca ventilação relativamente à perfusão",
+          "Muita ventilação e ausência de sangue",
+          "Ausência simultânea de ventilação e perfusão",
+          "Perfusão impossível"
         ],
-        answer: 1,
-        explanation: "Quando a ventilação é insuficiente face à perfusão, o sangue sai menos oxigenado da região afetada."
+        answer: 0,
+        explanation: "Quando a ventilação é baixa face à perfusão, o sangue sai menos oxigenado dessa região."
       },
       {
         topic: "Respiratória",
-        question: "Uma embolia pulmonar tende a criar regiões com:",
+        question: "Uma embolia pulmonar tende a causar:",
         options: [
           "Ventilação sem perfusão adequada",
           "Perfusão sem ventilação adequada",
-          "Aumento obrigatório da difusão de oxigénio",
+          "Colapso obrigatório de todos os alvéolos",
           "Redução do espaço morto fisiológico"
         ],
         answer: 0,
-        explanation: "Na embolia, há alvéolos ventilados mas pouco ou nada perfundidos, aumentando o espaço morto fisiológico."
+        explanation: "Na embolia, há áreas ventiladas mas mal perfundidas, aumentando o espaço morto fisiológico."
       },
       {
         topic: "Respiratória",
         question: "A maior parte do oxigénio no sangue é transportada:",
         options: [
-          "Dissolvida no plasma",
           "Ligada à hemoglobina",
-          "Convertida em bicarbonato",
+          "Dissolvida no plasma",
+          "Como bicarbonato",
           "Ligada à albumina"
         ],
-        answer: 1,
-        explanation: "A hemoglobina é responsável pela maior parte do transporte de oxigénio no sangue."
+        answer: 0,
+        explanation: "A hemoglobina transporta a grande maioria do oxigénio sanguíneo."
       },
       {
         topic: "Respiratória",
-        question: "Um desvio da curva de dissociação da oxi-hemoglobina para a direita indica:",
+        question: "Um desvio da curva da oxi-hemoglobina para a direita indica:",
         options: [
-          "Maior afinidade da hemoglobina pelo oxigénio",
-          "Menor libertação de oxigénio aos tecidos",
           "Facilitação da libertação de oxigénio aos tecidos",
-          "Impossibilidade de transporte de dióxido de carbono"
+          "Maior afinidade da hemoglobina pelo oxigénio",
+          "Ausência de transporte de oxigénio",
+          "Bloqueio da produção de dióxido de carbono"
         ],
-        answer: 2,
-        explanation: "Desvios para a direita reduzem a afinidade da hemoglobina pelo oxigénio, facilitando a entrega aos tecidos."
+        answer: 0,
+        explanation: "O desvio para a direita reduz a afinidade da hemoglobina pelo oxigénio e facilita a entrega tecidular."
       },
       {
         topic: "Respiratória",
         question: "Qual destes fatores desvia a curva da oxi-hemoglobina para a direita?",
         options: [
+          "Aumento do dióxido de carbono",
           "Diminuição da temperatura",
-          "Diminuição do dióxido de carbono",
           "Aumento do pH",
-          "Aumento do dióxido de carbono"
+          "Diminuição do 2,3-BPG"
         ],
-        answer: 3,
-        explanation: "Aumento de dióxido de carbono, aumento de temperatura, aumento de hidrogeniões e aumento de 2,3-BPG desviam a curva para a direita."
+        answer: 0,
+        explanation: "Aumento de dióxido de carbono, temperatura, hidrogeniões e 2,3-BPG favorece desvio para a direita."
       },
       {
         topic: "Respiratória",
         question: "O efeito Bohr descreve:",
         options: [
           "A influência do dióxido de carbono e do pH na afinidade da hemoglobina pelo oxigénio",
+          "A produção renal de eritropoietina",
           "A produção de surfactante pelos pneumócitos tipo II",
-          "A contração do diafragma durante a inspiração",
           "A filtração glomerular"
         ],
         answer: 0,
-        explanation: "O efeito Bohr explica como aumento de dióxido de carbono e redução do pH facilitam a libertação de oxigénio nos tecidos."
+        explanation: "O aumento de dióxido de carbono e a redução do pH diminuem a afinidade da hemoglobina pelo oxigénio."
       },
       {
         topic: "Respiratória",
-        question: "A maior parte do dióxido de carbono é transportada no sangue sob a forma de:",
+        question: "A maior parte do dióxido de carbono é transportada no sangue como:",
         options: [
-          "Oxigénio molecular",
           "Bicarbonato",
-          "Carbamino-hemoglobina apenas",
-          "Monóxido de carbono"
+          "Oxigénio molecular",
+          "Monóxido de carbono",
+          "Glicose"
         ],
-        answer: 1,
-        explanation: "O dióxido de carbono é maioritariamente convertido em bicarbonato, sobretudo nos eritrócitos."
+        answer: 0,
+        explanation: "Grande parte do dióxido de carbono é convertida em bicarbonato, sobretudo nos eritrócitos."
       },
       {
         topic: "Respiratória",
-        question: "Os quimiorrecetores centrais respondem sobretudo a alterações de:",
+        question: "Os quimiorrecetores centrais respondem principalmente a alterações de:",
         options: [
-          "Oxigénio arterial diretamente",
           "pH do líquido cefalorraquidiano relacionado com dióxido de carbono",
-          "Pressão arterial sistémica",
-          "Glicemia"
+          "Oxigénio arterial diretamente",
+          "Cálcio plasmático",
+          "Osmolalidade urinária"
         ],
-        answer: 1,
-        explanation: "O dióxido de carbono atravessa a barreira hematoencefálica e altera o pH do líquido cefalorraquidiano, estimulando os quimiorrecetores centrais."
+        answer: 0,
+        explanation: "O dióxido de carbono atravessa a barreira hematoencefálica e altera o pH do líquido cefalorraquidiano."
       },
       {
         topic: "Respiratória",
-        question: "Os quimiorrecetores periféricos são especialmente importantes quando há:",
+        question: "Os quimiorrecetores periféricos são especialmente importantes na resposta a:",
         options: [
           "Hipoxemia arterial significativa",
-          "Aumento isolado do volume residual",
-          "Diminuição da complacência da parede torácica sem alteração gasosa",
-          "Aumento da pressão oncótica"
+          "Aumento da glicemia",
+          "Hipercalcemia",
+          "Aumento da aldosterona"
         ],
         answer: 0,
-        explanation: "Os corpos carotídeos e aórticos respondem fortemente à redução importante da pressão arterial de oxigénio."
+        explanation: "Os corpos carotídeos e aórticos respondem de forma importante à diminuição da pressão arterial de oxigénio."
       },
       {
         topic: "Respiratória",
-        question: "Durante o exercício moderado, a ventilação aumenta principalmente para:",
+        question: "Durante o exercício moderado, a ventilação aumenta para:",
         options: [
-          "Compensar o aumento da produção de dióxido de carbono e consumo de oxigénio",
-          "Diminuir a perfusão muscular",
+          "Acompanhar o aumento do consumo de oxigénio e produção de dióxido de carbono",
+          "Reduzir a perfusão muscular",
           "Causar hipoventilação alveolar",
-          "Impedir o retorno venoso"
+          "Diminuir sempre o débito cardíaco"
         ],
         answer: 0,
-        explanation: "No exercício, o metabolismo aumenta, elevando consumo de oxigénio e produção de dióxido de carbono; a ventilação acompanha essa necessidade."
+        explanation: "No exercício, o metabolismo aumenta e a ventilação acompanha as necessidades gasosas."
       },
 
       {
         topic: "Renal",
         question: "A unidade funcional do rim é:",
         options: [
-          "O hepatócito",
-          "O nefrónio",
-          "O alvéolo",
-          "A ilhota pancreática"
+          "Nefrónio",
+          "Alvéolo",
+          "Hepatócito",
+          "Ilhota pancreática"
         ],
-        answer: 1,
-        explanation: "O nefrónio é a unidade funcional responsável por filtração, reabsorção, secreção e excreção."
+        answer: 0,
+        explanation: "O nefrónio realiza filtração, reabsorção, secreção e excreção."
       },
       {
         topic: "Renal",
-        question: "A filtração glomerular ocorre principalmente através de:",
+        question: "A filtração glomerular ocorre de:",
         options: [
           "Capilares glomerulares para o espaço de Bowman",
           "Ducto coletor para a ansa de Henle",
-          "Ureter para a bexiga",
-          "Túbulo distal para a arteríola eferente"
+          "Ureter para bexiga",
+          "Túbulo distal para arteríola eferente"
         ],
         answer: 0,
-        explanation: "O ultrafiltrado é formado quando o plasma atravessa a barreira glomerular para o espaço de Bowman."
+        explanation: "O ultrafiltrado passa dos capilares glomerulares para o espaço de Bowman."
       },
       {
         topic: "Renal",
-        question: "Qual destas substâncias é normalmente filtrada livremente no glomérulo?",
+        question: "Qual destas substâncias é normalmente filtrada livremente?",
         options: [
-          "Células vermelhas",
-          "Albumina em grande quantidade",
           "Água",
-          "Plaquetas"
+          "Eritrócitos",
+          "Plaquetas",
+          "Albumina em grande quantidade"
         ],
-        answer: 2,
-        explanation: "Água e pequenos solutos são filtrados livremente; células e grandes proteínas são retidas."
+        answer: 0,
+        explanation: "Água e pequenos solutos são filtrados; células e grandes proteínas são retidas."
       },
       {
         topic: "Renal",
         question: "A barreira de filtração glomerular impede sobretudo a passagem de:",
         options: [
+          "Células e grandes proteínas",
           "Sódio",
           "Glicose",
-          "Grandes proteínas e células",
           "Ureia"
         ],
-        answer: 2,
-        explanation: "A seletividade por tamanho e carga dificulta a passagem de proteínas plasmáticas grandes e células sanguíneas."
+        answer: 0,
+        explanation: "A barreira é seletiva por tamanho e carga, dificultando a passagem de proteínas grandes e células."
       },
       {
         topic: "Renal",
         question: "A maior parte da reabsorção de sódio e água ocorre no:",
         options: [
           "Túbulo proximal",
-          "Ducto coletor medular apenas",
+          "Ducto coletor",
           "Ureter",
           "Cápsula de Bowman"
         ],
         answer: 0,
-        explanation: "O túbulo proximal reabsorve grande parte do sódio, água, bicarbonato, glicose e aminoácidos filtrados."
+        explanation: "O túbulo proximal reabsorve grande parte do sódio, água, bicarbonato, glicose e aminoácidos."
       },
       {
         topic: "Renal",
         question: "Em condições normais, a glicose filtrada é:",
         options: [
-          "Totalmente excretada",
           "Reabsorvida no túbulo proximal até ao limite dos transportadores",
+          "Totalmente excretada",
           "Secretada no ducto coletor",
           "Convertida em ureia"
         ],
-        answer: 1,
-        explanation: "A glicose é reabsorvida por cotransporte com sódio no túbulo proximal, até saturação dos transportadores."
+        answer: 0,
+        explanation: "A glicose é reabsorvida por cotransporte com sódio no túbulo proximal até saturação."
       },
       {
         topic: "Renal",
         question: "A ansa de Henle é essencial para:",
         options: [
-          "Produzir surfactante",
           "Criar o gradiente osmótico medular",
-          "Sintetizar hormonas tiroideias",
-          "Impedir completamente a reabsorção de água"
+          "Produzir surfactante",
+          "Armazenar urina",
+          "Filtrar proteínas plasmáticas"
         ],
-        answer: 1,
-        explanation: "A ansa de Henle, especialmente o ramo ascendente espesso, contribui para a criação do gradiente osmótico medular."
+        answer: 0,
+        explanation: "A ansa de Henle contribui para o mecanismo de contracorrente e concentração urinária."
       },
       {
         topic: "Renal",
         question: "O ramo descendente fino da ansa de Henle é relativamente:",
         options: [
           "Permeável à água",
-          "Impermeável à água e ao sódio",
-          "Responsável por secreção de insulina",
-          "Idêntico ao ducto coletor cortical em todas as condições"
+          "Impermeável à água",
+          "Principal local de secreção de aldosterona",
+          "Principal local de filtração"
         ],
         answer: 0,
-        explanation: "O ramo descendente é permeável à água, permitindo concentração do fluido tubular."
+        explanation: "O ramo descendente permite saída de água, concentrando o fluido tubular."
       },
       {
         topic: "Renal",
-        question: "O ramo ascendente espesso da ansa de Henle é caracteristicamente:",
+        question: "O ramo ascendente espesso da ansa de Henle é:",
         options: [
-          "Altamente permeável à água",
           "Impermeável à água e reabsorvedor de sais",
-          "Local principal de filtração glomerular",
-          "Local de armazenamento de urina"
+          "Altamente permeável à água",
+          "Responsável pela micção",
+          "Local de síntese de insulina"
         ],
-        answer: 1,
-        explanation: "O ramo ascendente espesso reabsorve sais mas é pouco permeável à água, diluindo o fluido tubular."
+        answer: 0,
+        explanation: "O ramo ascendente espesso reabsorve sais e dilui o fluido tubular."
       },
       {
         topic: "Renal",
@@ -581,55 +588,55 @@
           "A secreção de surfactante"
         ],
         answer: 0,
-        explanation: "A hormona antidiurética promove inserção de canais de água no ducto coletor, aumentando reabsorção de água."
+        explanation: "A ADH promove inserção de aquaporinas no ducto coletor, aumentando reabsorção de água."
       },
       {
         topic: "Renal",
-        question: "A aldosterona atua sobretudo para:",
+        question: "A aldosterona atua para:",
         options: [
           "Aumentar reabsorção de sódio e secreção de potássio",
           "Diminuir toda a reabsorção tubular",
-          "Inibir a reabsorção de água mediada por hormona antidiurética",
-          "Reduzir a volemia"
+          "Bloquear a ADH",
+          "Aumentar excreção de sódio"
         ],
         answer: 0,
-        explanation: "A aldosterona aumenta a reabsorção de sódio e favorece secreção de potássio nas células principais."
+        explanation: "A aldosterona aumenta a reabsorção de sódio e favorece a secreção de potássio nas células principais."
       },
       {
         topic: "Renal",
         question: "A renina é libertada principalmente em resposta a:",
         options: [
-          "Aumento da pressão na arteríola aferente",
           "Redução da perfusão renal ou redução de sódio na mácula densa",
+          "Aumento da pressão arterial renal",
           "Hiperglicemia isolada",
           "Aumento do cálcio plasmático"
         ],
-        answer: 1,
-        explanation: "A renina aumenta quando há sinais de baixa perfusão renal, baixa entrega de sódio à mácula densa ou estímulo simpático."
+        answer: 0,
+        explanation: "Baixa perfusão renal, baixa entrega de sódio à mácula densa e estímulo simpático favorecem renina."
       },
       {
         topic: "Renal",
         question: "A angiotensina II tende a:",
         options: [
           "Promover vasoconstrição e estimular aldosterona",
-          "Inibir totalmente a sede",
-          "Reduzir reabsorção de sódio no túbulo proximal",
-          "Aumentar excreção de água independentemente da hormona antidiurética"
+          "Inibir completamente a sede",
+          "Reduzir reabsorção proximal de sódio",
+          "Bloquear a secreção de ADH"
         ],
         answer: 0,
-        explanation: "A angiotensina II é vasoconstritora e estimula aldosterona, sede e reabsorção tubular de sódio."
+        explanation: "A angiotensina II é vasoconstritora e estimula aldosterona, sede e ADH."
       },
       {
         topic: "Renal",
-        question: "Uma acidose metabólica é compensada, em parte, por:",
+        question: "Numa acidose metabólica, a compensação respiratória esperada é:",
         options: [
-          "Hipoventilação",
           "Hiperventilação",
-          "Paragem da secreção renal de hidrogeniões",
-          "Inibição completa da reabsorção de bicarbonato"
+          "Hipoventilação",
+          "Apneia permanente",
+          "Ausência de resposta ventilatória"
         ],
-        answer: 1,
-        explanation: "Na acidose metabólica, a hiperventilação reduz dióxido de carbono, ajudando a aumentar o pH."
+        answer: 0,
+        explanation: "A hiperventilação reduz dióxido de carbono e ajuda a elevar o pH."
       },
       {
         topic: "Renal",
@@ -637,35 +644,35 @@
         options: [
           "Reabsorção de bicarbonato e excreção de hidrogeniões",
           "Produção de oxigénio",
-          "Excreção exclusiva de proteínas plasmáticas",
+          "Excreção exclusiva de proteínas",
           "Secreção de glucagon"
         ],
         answer: 0,
-        explanation: "O rim reabsorve bicarbonato filtrado, gera novo bicarbonato e excreta ácido."
+        explanation: "O rim recupera bicarbonato filtrado, gera novo bicarbonato e elimina ácido."
       },
       {
         topic: "Renal",
         question: "O péptido natriurético auricular tende a:",
         options: [
-          "Aumentar retenção de sódio",
           "Promover excreção de sódio e água",
-          "Estimular fortemente a libertação de renina",
-          "Aumentar a secreção de aldosterona"
+          "Aumentar retenção de sódio",
+          "Estimular fortemente aldosterona",
+          "Estimular fortemente renina"
         ],
-        answer: 1,
-        explanation: "O péptido natriurético auricular é libertado com distensão auricular e favorece natriurese e diurese."
+        answer: 0,
+        explanation: "O ANP favorece natriurese e diurese quando há expansão de volume."
       },
       {
         topic: "Renal",
         question: "A clearance renal de uma substância representa:",
         options: [
           "O volume de plasma virtualmente depurado dessa substância por unidade de tempo",
-          "A quantidade de ar que entra nos pulmões",
-          "A pressão dentro dos alvéolos",
-          "A concentração hormonal na tiroide"
+          "A quantidade de ar inspirado",
+          "A pressão intrapleural",
+          "A concentração de tiroxina"
         ],
         answer: 0,
-        explanation: "Clearance é um conceito que expressa a capacidade renal de remover uma substância do plasma."
+        explanation: "Clearance avalia a capacidade renal de remover uma substância do plasma."
       },
 
       {
@@ -674,11 +681,11 @@
         options: [
           "Recetores de membrana e segundos mensageiros",
           "Ligação direta ao ADN sem recetor",
-          "Dissolução na bicamada lipídica sem sinalização",
-          "Conversão obrigatória em colesterol"
+          "Conversão obrigatória em colesterol",
+          "Entrada livre no núcleo sem recetor"
         ],
         answer: 0,
-        explanation: "Hormonas peptídicas são hidrossolúveis e costumam atuar em recetores de membrana."
+        explanation: "Hormonas peptídicas são hidrossolúveis e geralmente sinalizam por recetores de membrana."
       },
       {
         topic: "Endócrina",
@@ -690,54 +697,54 @@
           "Surfactante"
         ],
         answer: 0,
-        explanation: "Hormonas esteroides, como cortisol, aldosterona e hormonas sexuais, derivam do colesterol."
+        explanation: "Cortisol, aldosterona e hormonas sexuais são derivadas do colesterol."
       },
       {
         topic: "Endócrina",
-        question: "O eixo hipotálamo-hipófise-tiroide funciona com:",
+        question: "O eixo hipotálamo-hipófise-tiroide é regulado principalmente por:",
         options: [
-          "Feedback positivo contínuo das hormonas tiroideias",
-          "Feedback negativo das hormonas tiroideias sobre hipotálamo e hipófise",
-          "Ausência de regulação hipotalâmica",
-          "Secreção de insulina pela hipófise"
+          "Feedback negativo das hormonas tiroideias",
+          "Feedback positivo contínuo",
+          "Ausência de controlo hipotalâmico",
+          "Controlo direto pela insulina"
         ],
-        answer: 1,
-        explanation: "As hormonas tiroideias reduzem a secreção de TRH e TSH por feedback negativo."
+        answer: 0,
+        explanation: "T3 e T4 reduzem TRH e TSH por feedback negativo."
       },
       {
         topic: "Endócrina",
         question: "A TSH estimula principalmente:",
         options: [
-          "A glândula tiroide",
+          "A tiroide",
           "O córtex renal",
           "Os alvéolos pulmonares",
-          "As células beta pancreáticas diretamente"
+          "As células beta pancreáticas"
         ],
         answer: 0,
-        explanation: "A TSH estimula síntese e libertação de hormonas tiroideias pela tiroide."
+        explanation: "A TSH estimula síntese e libertação de hormonas tiroideias."
       },
       {
         topic: "Endócrina",
         question: "As hormonas tiroideias tendem a:",
         options: [
-          "Reduzir o metabolismo basal",
-          "Aumentar o metabolismo basal e modular crescimento e desenvolvimento",
-          "Bloquear todos os recetores adrenérgicos",
-          "Impedir a termogénese"
+          "Aumentar o metabolismo basal",
+          "Reduzir sempre o metabolismo basal",
+          "Impedir termogénese",
+          "Bloquear crescimento"
         ],
-        answer: 1,
-        explanation: "As hormonas tiroideias aumentam o metabolismo basal e são importantes para crescimento e maturação neurológica."
+        answer: 0,
+        explanation: "As hormonas tiroideias aumentam o metabolismo basal e participam no crescimento e desenvolvimento."
       },
       {
         topic: "Endócrina",
         question: "A insulina é secretada pelas:",
         options: [
-          "Células alfa pancreáticas",
           "Células beta pancreáticas",
+          "Células alfa pancreáticas",
           "Células principais da paratiroide",
           "Células foliculares da tiroide"
         ],
-        answer: 1,
+        answer: 0,
         explanation: "As células beta das ilhotas pancreáticas secretam insulina."
       },
       {
@@ -745,12 +752,12 @@
         question: "A principal ação metabólica da insulina é:",
         options: [
           "Promover armazenamento de nutrientes e reduzir glicemia",
-          "Estimular glicogenólise hepática sempre",
-          "Aumentar a produção hepática de glicose",
-          "Bloquear entrada de glicose no músculo"
+          "Estimular glicogenólise hepática",
+          "Aumentar produção hepática de glicose",
+          "Bloquear captação de glicose no músculo"
         ],
         answer: 0,
-        explanation: "A insulina favorece captação de glicose, síntese de glicogénio, síntese lipídica e armazenamento energético."
+        explanation: "A insulina favorece captação de glicose, síntese de glicogénio e armazenamento energético."
       },
       {
         topic: "Endócrina",
@@ -758,23 +765,23 @@
         options: [
           "Células alfa pancreáticas",
           "Células beta pancreáticas",
-          "Células C tiroideias",
-          "Células da adenohipófise"
+          "Células C da tiroide",
+          "Células da neuro-hipófise"
         ],
         answer: 0,
-        explanation: "As células alfa pancreáticas secretam glucagon, especialmente em jejum."
+        explanation: "O glucagon é produzido pelas células alfa pancreáticas, sobretudo em jejum."
       },
       {
         topic: "Endócrina",
         question: "O glucagon atua sobretudo para:",
         options: [
           "Aumentar a glicemia",
-          "Diminuir a glicogenólise hepática",
-          "Aumentar a captação muscular de glicose por GLUT4",
-          "Inibir a lipólise em todas as circunstâncias"
+          "Diminuir glicogenólise hepática",
+          "Aumentar captação muscular de glicose por GLUT4",
+          "Inibir a produção hepática de glicose"
         ],
         answer: 0,
-        explanation: "O glucagon aumenta a produção hepática de glicose, por glicogenólise e gluconeogénese."
+        explanation: "O glucagon estimula glicogenólise e gluconeogénese hepáticas."
       },
       {
         topic: "Endócrina",
@@ -786,19 +793,19 @@
           "Ducto coletor renal"
         ],
         answer: 0,
-        explanation: "O cortisol é um glucocorticoide produzido no córtex suprarrenal."
+        explanation: "O cortisol é um glucocorticoide produzido no córtex da glândula suprarrenal."
       },
       {
         topic: "Endócrina",
         question: "Uma ação fisiológica importante do cortisol é:",
         options: [
-          "Ajudar na resposta ao stress e aumentar disponibilidade de substratos energéticos",
+          "Ajudar na resposta ao stress e mobilizar substratos energéticos",
           "Reduzir permanentemente a glicemia",
           "Bloquear a ação das catecolaminas",
           "Inibir toda a gluconeogénese"
         ],
         answer: 0,
-        explanation: "O cortisol participa na resposta ao stress, promovendo mobilização energética e permissividade vascular às catecolaminas."
+        explanation: "O cortisol participa na resposta ao stress e aumenta a disponibilidade de energia."
       },
       {
         topic: "Endócrina",
@@ -807,18 +814,18 @@
           "Mineralocorticoides",
           "Hormonas tiroideias",
           "Catecolaminas",
-          "Hormonas pancreáticas peptídicas"
+          "Hormonas pancreáticas"
         ],
         answer: 0,
         explanation: "A aldosterona é o principal mineralocorticoide e regula sódio, potássio e volume extracelular."
       },
       {
         topic: "Endócrina",
-        question: "A paratormona é libertada em resposta a:",
+        question: "A paratormona é libertada principalmente em resposta a:",
         options: [
           "Hipocalcemia",
-          "Hipercalcemia extrema como estímulo primário",
-          "Aumento da glicose plasmática",
+          "Hipercalcemia",
+          "Hiperglicemia",
           "Aumento da pressão alveolar"
         ],
         answer: 0,
@@ -829,12 +836,12 @@
         question: "A paratormona tende a:",
         options: [
           "Aumentar o cálcio plasmático",
-          "Diminuir sempre a ativação da vitamina D",
+          "Diminuir sempre a vitamina D ativa",
           "Impedir reabsorção renal de cálcio",
-          "Reduzir a absorção intestinal de cálcio indiretamente"
+          "Reduzir absorção intestinal de cálcio"
         ],
         answer: 0,
-        explanation: "A paratormona aumenta cálcio plasmático por efeitos no osso, rim e ativação da vitamina D."
+        explanation: "A PTH aumenta cálcio plasmático por efeitos no osso, rim e ativação da vitamina D."
       },
       {
         topic: "Endócrina",
@@ -846,7 +853,43 @@
           "Paratiroide"
         ],
         answer: 0,
-        explanation: "A hormona antidiurética é produzida em neurónios hipotalâmicos e libertada pela neuro-hipófise."
+        explanation: "A ADH é produzida em neurónios hipotalâmicos e libertada pela neuro-hipófise."
+      },
+      {
+        topic: "Endócrina",
+        question: "A ocitocina está especialmente associada a:",
+        options: [
+          "Contração uterina e ejeção do leite",
+          "Aumento da filtração glomerular",
+          "Produção de tiroxina",
+          "Absorção intestinal de glicose"
+        ],
+        answer: 0,
+        explanation: "A ocitocina participa no parto e na ejeção do leite durante a lactação."
+      },
+      {
+        topic: "Endócrina",
+        question: "A ACTH estimula principalmente:",
+        options: [
+          "O córtex suprarrenal",
+          "A medula renal",
+          "As células beta pancreáticas",
+          "Os pneumócitos tipo II"
+        ],
+        answer: 0,
+        explanation: "A ACTH estimula principalmente a produção de cortisol pelo córtex suprarrenal."
+      },
+      {
+        topic: "Endócrina",
+        question: "A calcitonina é produzida pelas:",
+        options: [
+          "Células C da tiroide",
+          "Células beta pancreáticas",
+          "Células principais da paratiroide",
+          "Células justaglomerulares"
+        ],
+        answer: 0,
+        explanation: "A calcitonina é secretada pelas células C, ou parafoliculares, da tiroide."
       }
     ];
 
@@ -867,11 +910,52 @@
     function loadQuestion() {
       answered = false;
       nextBtn.disabled = true;
-      explanation.style.display = "none";
-      explanation.textContent = "";
 
       const q = questions[currentIndex];
 
       topicBadge.textContent = `${q.topic} · Pergunta ${currentIndex + 1}/${questions.length}`;
       scoreBadge.textContent = `Pontuação: ${score}/${currentIndex}`;
-      progress.style.width = `${(currentIndex / questions.length
+      progress.style.width = `${(currentIndex / questions.length) * 100}%`;
+
+      questionText.textContent = q.question;
+      answers.innerHTML = "";
+      explanation.style.display = "none";
+      explanation.textContent = "";
+
+      q.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.className = "answer-btn";
+        button.textContent = option;
+        button.addEventListener("click", () => selectAnswer(index, button));
+        answers.appendChild(button);
+      });
+    }
+
+    function selectAnswer(selectedIndex, selectedButton) {
+      if (answered) return;
+
+      answered = true;
+      nextBtn.disabled = false;
+
+      const q = questions[currentIndex];
+      const buttons = document.querySelectorAll(".answer-btn");
+
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === q.answer) {
+          button.classList.add("correct");
+        }
+
+        if (index === selectedIndex && selectedIndex !== q.answer) {
+          button.classList.add("wrong");
+        }
+      });
+
+      if (selectedIndex === q.answer) {
+        score++;
+      }
+
+      scoreBadge.textContent = `Pontuação: ${score}/${currentIndex + 1}`;
+      explanation.style.display = "block";
+      explanation.textContent = q.explanation;
